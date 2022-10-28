@@ -7,9 +7,12 @@ const Countries = (props) => {
   return (
     <section className={style.countries}>
       {
-         props?.countries.map((country)=>{
+         props.countries.map((country)=>{
             const countryNew={country,id:uuidv4()}
-            return <Country {...countryNew} key={countryNew.id}/>
+            return (
+            <Country {...countryNew} key={countryNew.id}
+            onRemoveCountry={props.onRemoveCountry} />
+            )
          })
  }
     </section>
