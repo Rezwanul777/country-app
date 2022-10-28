@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react'
+import Countries from './Countries/Countries'
 
 const url="https://restcountries.com/v3.1/all"
 
@@ -33,8 +34,12 @@ function App() {
   },[])
 
   return (
-    <div className="App">
-      
+    <div >
+      <h1>Country App</h1>
+      {isLoading && <h2>Loading...</h2>}
+      {error && <h3>{error.message}</h3>}
+      {countries && <Countries countries={countries}/>}
+
     </div>
   );
 }
