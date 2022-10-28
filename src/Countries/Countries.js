@@ -11,7 +11,7 @@ const Countries = (props) => {
             const countryNew={country,id:uuidv4()}
             return (
             <Country {...countryNew} key={countryNew.id}
-            onRemoveCountry={props.onRemoveCountry} />
+            onRemoveCountry={props.onRemoveCountry} onSearch={props.onSearch}/>
             )
          })
  }
